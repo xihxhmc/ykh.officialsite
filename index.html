@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>江西盈科行网络信息股份有限公司</title>
+  <!-- 有赞UI组件样式-mobile端 -->
+  <link rel="stylesheet" href="/static/vant/vant.css">
+  <!-- ElementUI组件样式-PC端 -->
+  <link rel="stylesheet" href="/static/elementUI/index.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui@2.3.7/lib/theme-chalk/index.css"> -->
+<body>
+  <div id="app"></div>
+  <script src="/static/vue/vue.min.js"></script> 
+  <!-- <script src="/static/elementUI/index.js"></script>  -->
+  <!-- <script src="https://unpkg.com/element-ui@2.3.7/lib/index.js"></script>  -->
+  <script>
+        function runEnvironment() {
+            if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+                mobileScreen(window, document)
+                // this.$router.replace('/mobiles')
+            }else {
+                computerScreen(window, document)
+                // this.$router.replace('/introduce')
+            }
+        };
+        function mobileScreen(window, document) {
+            function resize() {
+                var ww = window.innerWidth
+                if (ww > window.screen.width) {
+                window.requestAnimationFrame(resize)
+                } else {
+                if (ww > 750) {
+                    ww = 750
+                }
+                let base = (ww * 200) / 750
+                document.documentElement.style.fontSize = base + 'px'
+                }
+            }
+            resize()
+            window.addEventListener('resize', resize)
+        };
+        function computerScreen(window, document) {
+            function resize() {
+                var winWidth = document.documentElement.offsetWidth || document.body.offsetWidth
+                winWidth = winWidth < 1366 ? 1366 : winWidth
+                var oHtml = document.getElementsByTagName('html')[0]
+                oHtml.style.fontSize = 100 * winWidth / 1920 + 'px'
+
+                // window.addEventListener('resize', function () {
+                //   var winWidth = document.documentElement.offsetWidth || document.body.offsetWidth
+                //   winWidth = winWidth < 1400 ? 1400 : winWidth
+                //   var oHtml = document.getElementsByTagName('html')[0]
+                //   oHtml.style.fontSize = 100 * winWidth / 1920 + 'px'
+                // })
+            }
+            resize()
+            window.addEventListener('resize', resize)
+        }
+        runEnvironment()
+  </script>
+   
+</body>
+
+</html>

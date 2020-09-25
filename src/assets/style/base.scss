@@ -1,0 +1,21 @@
+.flex-s {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flex-b {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-ac {
+    align-items: center;
+}
+.flex-as {
+    align-items: flex-start;
+}
